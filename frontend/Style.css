@@ -11,6 +11,9 @@ h1 {
   margin-bottom: 20px;
   color: #2b2d42;
 }
+div#loading {
+  display: none;
+}
 
 
 button {

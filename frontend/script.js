@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Today I Learned</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-  <h1>Today I Learned</h1>
-
-  <div class="search-box">
-    <label for="search-input">What do you want to learn today?:</label><br />
-    <input type="text" id="search-input" placeholder="e.g. Rihanna" />
-    <button onclick="getFact()">Search</button>
-    <p id="loading" style="display: none; color: #999;">Searching...</p>
-
-  </div>
-
-  <div id="fact-container">
-    <div id="title"></div>
-    <div id="summary"></div>
-    <a id="link" href="#" target="_blank">Read more on Wikipedia</a>
-  </div>
-
-
-  <script>
-   async function getFact() {
+async function getFact() {
   const topic = document.getElementById('search-input').value.trim();
   if (!topic) {
     alert("Please enter a topic.");
@@ -50,7 +22,3 @@
 
   document.getElementById('loading').style.display = 'none';
 }
-  </script>
-</body>
-</html>
-
