@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Today I Learned</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+  <h1>Today I Learned</h1>
+
+  <div class="search-box">
+    <label for="search-input">What do you want to learn today?:</label><br />
+    <input type="text" id="search-input" placeholder="e.g. Rihanna" />
+    <button onclick="getFact()">Search</button>
+    <p id="loading" style="display: none; color: #999;">Searching...</p>
+
+  </div>
+
+  <div id="fact-container">
+    <div id="title"></div>
+    <div id="summary"></div>
+    <a id="link" href="#" target="_blank">Read more on Wikipedia</a>
+  </div>
+
+
+  <script>
+   async function getFact() {
+  const topic = document.getElementById('search-input').value.trim();
+  if (!topic) {
+    alert("Please enter a topic.");
+    return;
+  }
+
+  document.getElementById('loading').style.display = 'block';
+
+  try {
+    const response = await fetch(`http://localhost:5500/api/wiki?topic=${encodeURIComponent(topic)}`);
+    const data = await response.json();
+
+    document.getElementById('title').textContent = data.title || 'No title found';
+    document.getElementById('summary').textContent = data.extract || 'No summary found';
+    document.getElementById('link').href = data.url || '#';
+  } catch (error) {
+    document.getElementById('title').textContent = 'Oops! Something went wrong.';
+    document.getElementById('summary').textContent = '';
+    document.getElementById('link').href = '#';
+  }
+
+  document.getElementById('loading').style.display = 'none';
+}
+  </script>
+</body>
+</html>
+
