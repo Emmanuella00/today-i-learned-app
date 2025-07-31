@@ -15,26 +15,13 @@
     <label for="search-input">What do you want to learn today?:</label><br />
     <input type="text" id="search-input" placeholder="e.g. Artificial Intelligence, Space Exploration" />
     <button onclick="getFact()">Get Fact</button>
-    <button onclick="getRandomFact()" id="random-btn">Random Fact</button>
     <div id="loading">Loading...</div>
-  </div>
-
-  <div id="search-history">
-    <h3>Recent Searches:</h3>
-    <div id="history-list"></div>
-    <button onclick="clearHistory()" id="clear-history">Clear History</button>
   </div>
 
   <div id="fact-container">
     <div id="title"></div>
     <div id="summary"></div>
     <a id="link" href="#" target="_blank">Read more on Wikipedia</a>
-    <button onclick="saveFact()" id="save-btn" style="display:none;">Save This Fact</button>
-  </div>
-
-  <div id="saved-facts">
-    <h3>Saved Facts:</h3>
-    <div id="saved-list"></div>
   </div>
   
   <script src="script.js"></script>
