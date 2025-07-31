@@ -8,7 +8,7 @@ async function getFact() {
   document.getElementById('loading').style.display = 'block';
 
   try {
-    const response = await fetch(`http://localhost:5500/api/wiki?topic=${encodeURIComponent(topic)}`);
+    const response = await fetch(`/api/wiki?topic=${encodeURIComponent(topic)}`);
     const data = await response.json();
 
     document.getElementById('title').textContent = data.title || 'No title found';
