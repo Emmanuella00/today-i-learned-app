@@ -16,11 +16,6 @@ The Today I Learned (TIL) app is a web application that allows users to discover
   - Summary API: `https://en.wikipedia.org/api/rest_v1/page/summary/`
   - Documentation: https://www.mediawiki.org/wiki/API:Main_page
 
-## Docker Hub Repository
-- **Repository**: https://hub.docker.com/r/emmanuella00/today-i-learned-app
-- **Image Name**: `emmanuella00/today-i-learned-app`
-- **Tags**: `v1`, `latest`
-
 ## Local Development
 
 ### Prerequisites
